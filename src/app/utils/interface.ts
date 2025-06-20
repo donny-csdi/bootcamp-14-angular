@@ -7,3 +7,9 @@ export interface ICvData {
     address: string,
     techStack: string[]
 }
+
+export interface IPokemon {
+    name: string,
+    id: number,
+    spirits: string
+}

@@ -13,8 +13,19 @@ export class CvComponent {
 
   public cvData: ICvData;
 
+  count: number = 0;
+  increment: number = 1;
+
   constructor(private cvService: CvService) {
     this.cvData = this.cvService.getDataCV();
+  }
+
+  updateCountStart(val: number) {
+    this.count = val
+  }
+
+  updateIncrement(val: number) {
+    this.increment = val
   }
 
 }

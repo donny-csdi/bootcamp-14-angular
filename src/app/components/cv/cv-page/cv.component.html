@@ -1,8 +1,8 @@
 <div class="biodata-container">
     <div class="biodata-card">
         <div class="profile-image">
-            <img [src]="cvData.image" alt="{{ cvData.name }}">
-        </div>
+            <img [src]="cvData.image" alt="{{ cvData.name }}" >
+        </div>`
         <div class="biodata-info">
             <h2 class="name">{{ cvData.name }}</h2>
             <p class="description">Frontend Developer</p>
@@ -33,4 +33,27 @@
             </div>
         </div>
     </div>
+
 </div>
+
+  <!-- Day 2 Demo Components -->
+  <div class="day2-demo-container">
+    
+    <!-- Lifecycle Hooks Demo -->
+    <div class="demo-section">
+      <div class="demo-controls">
+        <button (click)="updateCountStart(10)" class="demo-button">Set Start to 10</button>
+        <button (click)="updateIncrement(2)" class="demo-button">Increment by 2</button>
+        <button (click)="updateIncrement(1)" class="demo-button">Increment by 1</button>
+      </div>
+      <app-pokemon-counter
+      [startCount]="count"
+      [incrementBy]="increment">
+      </app-pokemon-counter>
+    </div>
+    
+    <!-- Component Communication Demo -->
+    <div class="demo-section">
+      <app-pokemon-favorites></app-pokemon-favorites>
+    </div>
+  </div>

@@ -1,0 +1,53 @@
+.pokemon-counter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.counter-card {
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+
+    h2 {
+        color: blue;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+.counter-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+.counter-label {
+    margin-top: 5px;
+    color: beige;
+    font-size: 16px;
+}
+
+.counter-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .reset-button {
+        padding: 15px 20px;
+        background-color: blue;
+        color: white;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
