@@ -1,13 +1,26 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { CvModule } from './components/cv/cv.module';
+import { LayoutsModule } from './components/layouts/layouts.module';
+import { PokemonModule } from './components/pokemon/pokemon.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CvModule],
+  imports: [
+    RouterOutlet, 
+    HttpClientModule, 
+    FormsModule, 
+    CommonModule, 
+    CvModule, 
+    LayoutsModule, 
+    PokemonModule
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'training-project';

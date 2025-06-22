@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CvService } from '../cv.service';
+import { CvService } from '../../../services/cv.service';
 import { ICvData } from '../../../utils/interface';
 import { CommonModule } from '@angular/common';
 

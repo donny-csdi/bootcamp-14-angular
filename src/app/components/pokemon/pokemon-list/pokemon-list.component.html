@@ -1,0 +1,29 @@
+<div class="pokemon-container">
+    <div class="search-filter-container">
+        <input class="search-input" type="text" placeholder="Search Pokemon" [(ngModel)]="searchPokemon" (input)="filterPokemon()">
+        <div class="element-filters">
+            <button *ngFor="let element of elements" class="element-button" [ngClass]="element" (click)="filterByElement(element)">{{ element }}</button>
+        </div>
+    </div>
+
+    <div class="loading-spinner" *ngIf="loading">
+        <div class="spinner"></div>
+        <p>Loading Pokemons...</p>
+      </div>
+      
+      <div class="pokemon-grid" *ngIf="!loading">
+        <div class="pokemon-card" *ngFor="let poke of paginatedPokemon" [class.selected]="selectedPokemon?.name === poke.name" (click)="selectPokemon(poke)">
+            <img [src]="poke.spirits" [alt]="poke.name" class="pokemon-image">
+            <div class="pokemon-info">
+                <h3 [ngStyle]="{color: poke.element==='water'? color: color2}">{{poke.name | titlecase}}</h3>
+                <span class="element-badge" [ngClass]="poke.element">{{poke.element}}</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="pagination" *ngIf="!loading && totalPages > 1">
+        <button class="pagination-button" (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
+        <span class="page-info">Page {{currentPage}} of {{totalPages}}</span>
+        <button class="pagination-button" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+      </div>
+</div>

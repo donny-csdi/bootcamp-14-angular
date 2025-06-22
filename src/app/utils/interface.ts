@@ -12,4 +12,6 @@ export interface IPokemon {
     name: string,
     id: number,
     spirits: string
+    url?:string
+    element?:string
 }

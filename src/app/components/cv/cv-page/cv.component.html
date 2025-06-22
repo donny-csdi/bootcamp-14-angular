@@ -24,6 +24,10 @@
                     <span class="label">Address :</span>
                     <span class="value">{{ cvData.address }}</span>
                 </div>
+                <div class="info-item">
+                    <span class="label">Address :</span>
+                    <input class="value" [(ngModel)]="cvData.address">
+                </div>
             </div>
             <div class="tech-stack">
                 <h2>Tech Stack</h2>
@@ -37,10 +41,10 @@
 </div>
 
   <!-- Day 2 Demo Components -->
-  <div class="day2-demo-container">
+  <!-- <div class="day2-demo-container"> -->
     
     <!-- Lifecycle Hooks Demo -->
-    <div class="demo-section">
+    <!-- <div class="demo-section">
       <div class="demo-controls">
         <button (click)="updateCountStart(10)" class="demo-button">Set Start to 10</button>
         <button (click)="updateIncrement(2)" class="demo-button">Increment by 2</button>
@@ -50,10 +54,10 @@
       [startCount]="count"
       [incrementBy]="increment">
       </app-pokemon-counter>
-    </div>
+    </div> -->
     
     <!-- Component Communication Demo -->
-    <div class="demo-section">
+    <!-- <div class="demo-section">
       <app-pokemon-favorites></app-pokemon-favorites>
     </div>
-  </div>
+  </div> -->
