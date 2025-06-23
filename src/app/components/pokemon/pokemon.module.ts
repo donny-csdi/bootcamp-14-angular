@@ -7,20 +7,40 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { PokemonService } from "../../services/pokemon.service";
+import { RouterModule, Routes } from "@angular/router";
+import { PokemonDetailComponent } from "./pokemon-detail/pokemon-detail.component";
+
+const routes: Routes = [
+    {
+        path: '',
+        component: PokemonListComponent
+    },
+    {
+        path: ':id',
+        component: PokemonDetailComponent
+    },
+    {
+        path: 'pokemon-counter',
+        component: PokemonCounterComponent
+    },
+    {
+        path: 'pokemon-favorites',
+        component: PokemonFavoritesComponent
+    }
+]
 
 @NgModule({
     declarations: [PokemonCardComponent, 
         PokemonCounterComponent, 
         PokemonFavoritesComponent, 
-        PokemonListComponent],
+        PokemonListComponent,
+        PokemonDetailComponent],
     imports: [CommonModule, 
         FormsModule, 
-        HttpClientModule],
+        HttpClientModule,
+        RouterModule.forChild(routes)],
     providers: [PokemonService],
-    exports: [PokemonCardComponent, 
-            PokemonCounterComponent, 
-            PokemonFavoritesComponent, 
-            PokemonListComponent]
+    exports: [RouterModule]
 })
 
 export class PokemonModule { }

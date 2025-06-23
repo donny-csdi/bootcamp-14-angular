@@ -4,6 +4,7 @@ import { PokemonService } from '../../../services/pokemon.service';
 import { IPokemon } from '../../../utils/interface';
 import { CommonModule } from '@angular/common';
 import { start } from 'repl';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -29,7 +30,7 @@ export class PokemonListComponent implements OnInit{
     color='blue'
     color2='red'
 
-    constructor(private pokemonService:PokemonService){}
+    constructor(private pokemonService:PokemonService, private router: Router){}
 
     ngOnInit(): void {
       this.loadPokemon()
@@ -84,7 +85,12 @@ export class PokemonListComponent implements OnInit{
     }
 
     selectPokemon(pokemon:IPokemon) {
-      this.selectedPokemon = this.selectedPokemon!.name === pokemon.name ? null : pokemon;
+      this.selectedPokemon = this.selectedPokemon?.name === pokemon.name ? null : pokemon;
+    }
+
+    viewDetails(pokemon: IPokemon, event: any) {
+      event.stopPropagation();
+      this.router.navigate([`/pokemon/${pokemon.name}`])
     }
 
     updatePagination() {

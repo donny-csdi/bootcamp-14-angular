@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { CvModule } from './components/cv/cv.module';
 import { LayoutsModule } from './components/layouts/layouts.module';
 import { PokemonModule } from './components/pokemon/pokemon.module';
+import { AuthModule } from './components/auth/auth.module';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { PokemonModule } from './components/pokemon/pokemon.module';
     CommonModule, 
     CvModule, 
     LayoutsModule, 
-    PokemonModule
+    PokemonModule,
+    AuthModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

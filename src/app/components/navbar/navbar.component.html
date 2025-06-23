@@ -3,13 +3,16 @@
     <div class="nav-items">
   
       <div class="nav-links">
-        <a routerLink="/pokemon-favorites" routerLinkActive="active">Pokemon Favorites</a>
+        <a routerLink="/pokemon/pokemon-favorites" routerLinkActive="active">Pokemon Favorites</a>
       </div>
       <div class="nav-links">
-        <a routerLink="/pokemon-counter" routerLinkActive="active">Pokemon Counter</a>
+        <a routerLink="/pokemon/pokemon-counter" routerLinkActive="active">Pokemon Counter</a>
       </div>
       <div class="nav-links">
-        <a routerLink="/pokemon-list" routerLinkActive="active">Pokemon List</a>
+        <a routerLink="/pokemon" routerLinkActive="active">Pokemon List</a>
+      </div>
+      <div class="nav-links">
+        <button (click)="logout()" class="logout-btn">Logout</button>
       </div>
     </div>
   </nav>

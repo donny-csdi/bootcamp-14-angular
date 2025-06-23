@@ -12,12 +12,13 @@
       </div>
       
       <div class="pokemon-grid" *ngIf="!loading">
-        <div class="pokemon-card" *ngFor="let poke of paginatedPokemon" [class.selected]="selectedPokemon?.name === poke.name" (click)="selectPokemon(poke)">
-            <img [src]="poke.spirits" [alt]="poke.name" class="pokemon-image">
+        <div class="pokemon-card" *ngFor="let pokemon of paginatedPokemon" [class.selected]="selectedPokemon?.name === pokemon.name" (click)="selectPokemon(pokemon)">
+            <img [src]="pokemon.spirits" [alt]="pokemon.name" class="pokemon-image">
             <div class="pokemon-info">
-                <h3 [ngStyle]="{color: poke.element==='water'? color: color2}">{{poke.name | titlecase}}</h3>
-                <span class="element-badge" [ngClass]="poke.element">{{poke.element}}</span>
+                <h3 [ngStyle]="{color: pokemon.element==='water'? color: color2}">{{pokemon.name | titlecase}}</h3>
+                <span class="element-badge" [ngClass]="pokemon.element">{{pokemon.element}}</span>
             </div>
+            <button class="select-button" (click)="viewDetails(pokemon, $event)" *ngIf="selectedPokemon?.name === pokemon.name">View Details</button>
         </div>
       </div>
 
